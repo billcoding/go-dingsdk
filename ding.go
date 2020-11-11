@@ -11,7 +11,6 @@ import (
 	"time"
 )
 
-var token = ""
 var mu sync.Mutex
 
 //授权接口获取token
@@ -39,7 +38,7 @@ func authorize() string {
 		log.Println(err)
 		return ""
 	}
-	log.Printf("success [token:%s]\n", token)
+	log.Printf("success [token:%s]\n", d.AccessToken)
 	return d.AccessToken
 }
 
